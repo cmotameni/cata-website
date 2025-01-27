@@ -44,4 +44,24 @@ const initMobileMenu = () => {
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
+});
+
+// Form submission handling
+document.getElementById('demoForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Here you would typically send the form data to your server
+    // For now, we'll just show the success toast
+    
+    // Clear the form
+    this.reset();
+    
+    // Show the toast
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    
+    // Hide the toast after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
 }); 

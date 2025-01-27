@@ -1384,17 +1384,24 @@ html {
 }
 
 /* iPad Pro Specific Styles */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    /* Hero Section Adjustments */
-    .main-heading {
-        font-size: 96px;
-    }
+@media (min-width: 1025px) {
+    /* No changes needed */
+}
 
-    .subtitle {
-        font-size: 24px;
-    }
-
+/* Tablet Styles (1024px to 431px) */
+@media (max-width: 1024px) and (min-width: 431px) {
     /* Subhero Section Adjustments */
+    .subhero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+        margin: 4rem auto;
+    }
+
+    .subhero.reverse {
+        flex-direction: column-reverse;
+    }
+
     .subhero-content {
         text-align: center;
     }
@@ -1409,7 +1416,21 @@ html {
         margin-right: auto;
     }
 
-    /* Contact Section Adjustments */
+    .feature-list {
+        justify-content: center;
+    }
+
+    .feature-item {
+        text-align: center;
+    }
+
+    /* Section wrapper adjustments */
+    .section-wrapper {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Contact section adjustments */
     .contact-section {
         border-radius: 0;
     }
@@ -1436,6 +1457,11 @@ html {
         justify-content: center;
     }
 
+    /* Force image to top for all subhero sections */
+    .subhero, .subhero.reverse {
+        flex-direction: column-reverse;
+    }
+
     .subhero-content {
         text-align: center;
         display: flex;
@@ -1445,6 +1471,7 @@ html {
 
     .subhero-title {
         text-align: center;
+        margin-top: 2rem;
     }
 
     .subhero-description {
@@ -1462,6 +1489,36 @@ html {
     .contact-section {
         border-radius: 0;
         margin: 0;
+    }
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* For retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo img {
+        height: 40px;
     }
 }
 
