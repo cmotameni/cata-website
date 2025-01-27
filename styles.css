@@ -11,18 +11,12 @@ body {
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
+    background-color: white;
 }
 
 /* Home page specific styles */
 .home-page {
-    background: linear-gradient(
-        120deg,
-        #0A2540 0%,
-        #061628 20%,
-        #051220 40%,
-        #0A2540 60%,
-        #0F3154 80%
-    );
+    background-color: white;
 }
 
 /* Mesh Gradient Styles */
@@ -55,7 +49,39 @@ body {
     align-items: center;
     padding: 1.5rem 4rem;
     background-color: transparent;
-    box-shadow: none;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+/* Scrolled navbar styles */
+.navbar-scrolled {
+    background-color: white !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .nav-links a {
+    color: #10172A;
+}
+
+.navbar-scrolled .login-btn {
+    color: #10172A;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .login-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-scrolled .demo-btn {
+    background-color: #007AFF;
+    color: white;
+}
+
+.navbar-scrolled .demo-btn:hover {
+    background-color: #0056b3;
 }
 
 .logo {
@@ -66,7 +92,27 @@ body {
 .logo img {
     height: 40px;
     width: auto;
+}
+
+/* Logo switching styles */
+.logo-scrolled {
+    display: none;
+    opacity: 0;
+}
+
+.logo-default {
     display: block;
+    opacity: 1;
+}
+
+.navbar-scrolled .logo-scrolled {
+    display: block;
+    opacity: 1;
+}
+
+.navbar-scrolled .logo-default {
+    display: none;
+    opacity: 0;
 }
 
 /* For retina displays */
@@ -100,6 +146,20 @@ body {
     font-size: 16px;
 }
 
+.login-btn {
+    color: white;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
 .demo-btn {
     background-color: white;
     color: #0A2540;
@@ -124,32 +184,40 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    overflow: visible;
-    max-width: 1400px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    background: none;
-    z-index: 2;
+    justify-content: center;
+    padding: 6rem 2rem;
+    overflow: hidden;
+    background-image: url('cata-landingimage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hero::before,
-.hero::after {
-    display: none;  /* Remove the hero-specific gradients */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
-    margin-bottom: 3rem;
-    color: white;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    padding-top: 80px;
 }
 
 .subtitle {
@@ -165,6 +233,7 @@ body {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     max-width: 1000px;
+    text-align: center;
 }
 
 .description {
@@ -209,36 +278,77 @@ body {
 }
 
 /* Features Section */
-.features {
-    max-width: 1200px;
+.section-wrapper:has(.features) {
+    background-color: white;
     width: 100%;
-    margin: 6rem auto;
-    padding: 3rem;
+    margin: 12rem 0;
+}
+
+.features {
+    width: 100%;
+    margin: 0;
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-header {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+}
+
+.features-title {
+    font-size: 48px;
+    color: #10172A;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.features-subtitle {
+    font-size: 20px;
+    color: #425365;
+    line-height: 1.6;
+}
+
+.feature-cards-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
-    background-color: white;
-    border-radius: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .feature-card {
     flex: 1;
     min-width: 300px;
-    max-width: 400px;
-    text-align: center;
+    max-width: 350px;
+    text-align: left;
     padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
 }
 
 .feature-icon {
     margin-bottom: 1.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .feature-img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -246,12 +356,15 @@ body {
     font-size: 24px;
     color: #10172A;
     margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: left;
 }
 
 .feature-card p {
     font-size: 16px;
     color: #425365;
     line-height: 1.6;
+    text-align: left;
 }
 
 /* Add to the existing media queries */
@@ -270,13 +383,18 @@ body {
 /* Subhero Section */
 .subhero {
     max-width: 1200px;
-    margin: 8rem auto;
+    margin: 12rem auto;
     padding: 3rem;
     display: flex;
     align-items: center;
     gap: 4rem;
     background-color: white;
     border-radius: 24px;
+}
+
+/* Add spacing after hero section */
+.hero + .section-wrapper {
+    margin-top: 8rem;
 }
 
 .subhero-content {
@@ -327,6 +445,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 600px;
+}
+
+.subhero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
 }
 
 .placeholder-card {
@@ -377,6 +502,10 @@ body {
     .subhero-content {
         text-align: left;
     }
+
+    .subhero-image {
+        max-width: 800px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -391,7 +520,7 @@ body {
 }
 
 .book-demo {
-    color: #00BCFF;
+    color: #007AFF;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -401,7 +530,7 @@ body {
 }
 
 .book-demo:hover {
-    color: #009dd6;
+    color: #007AFF;
 }
 
 .book-demo .arrow {
@@ -477,7 +606,7 @@ body {
 }
 
 .book-demo:hover {
-    color: #009dd6;
+    color: #007AFF;
 }
 
 .book-demo .arrow {
@@ -721,7 +850,7 @@ body {
 
 .plus-icon {
     flex-shrink: 0;
-    color: #00BCFF;
+    color: #007AFF;
     transition: transform 0.3s ease;
 }
 
@@ -821,7 +950,7 @@ body {
 
 /* Add new styles for the subhero demo button */
 .subhero .book-demo {
-    color: #00BCFF;
+    color: #007AFF;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -833,7 +962,7 @@ body {
 }
 
 .subhero .book-demo:hover {
-    color: #009dd6;
+    color: #007AFF;
 }
 
 .subhero .book-demo .arrow {
@@ -843,7 +972,7 @@ body {
 
 /* Update Bento Grid button styles */
 .bento-card .book-demo {
-    color: #00BCFF;
+    color: #007AFF;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -855,7 +984,7 @@ body {
 }
 
 .bento-card .book-demo:hover {
-    color: #009dd6;
+    color: #007AFF;
 }
 
 .bento-card .book-demo .arrow {
@@ -865,7 +994,7 @@ body {
 
 /* Update to specifically target small bento cards */
 .bento-left .bento-card .book-demo {
-    color: #00BCFF;
+    color: #007AFF;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -877,7 +1006,7 @@ body {
 
 /* Keep the large card button styles without padding */
 .bento-right .bento-card .book-demo {
-    color: #00BCFF;
+    color: #007AFF;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -895,7 +1024,9 @@ body {
     align-items: center;
     padding: 1.5rem 4rem;
     background-color: transparent;
-    box-shadow: none;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 }
 
 .nav-menu {
@@ -918,25 +1049,30 @@ body {
     }
 }
 
-/* Contact Page Styles */
+/* Contact Section */
 .contact-section {
     max-width: 1200px;
-    margin: 4rem auto;
+    margin: 12rem auto 8rem;
+    padding: 4rem 2rem;
+    background-color: #007AFF;
+    border-radius: 24px;
 }
 
 .contact-container {
     display: flex;
-    gap: 4rem;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
 }
 
 .contact-content {
-    flex: 1;
+    max-width: 600px;
 }
 
 .contact-content h1 {
     font-size: 48px;
-    color: #333;
+    color: white;
     line-height: 1.2;
     margin-bottom: 2rem;
     font-weight: 600;
@@ -971,18 +1107,9 @@ body {
 }
 
 .contact-form-container {
-    flex: 1;
-    background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.contact-form-container h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 2rem;
-    font-weight: 600;
+    max-width: 500px;
+    width: 100%;
+    background: transparent;
 }
 
 .contact-form {
@@ -995,38 +1122,42 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    text-align: left;
 }
 
 .form-group label {
     font-size: 16px;
-    color: #333;
+    color: white;
     font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
     padding: 12px;
-    border: 1px solid #E2E8F0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
     border-radius: 8px;
     font-family: 'Figtree', sans-serif;
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #0A2540;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
+    border-color: white;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .submit-btn {
-    background-color: #333;
-    color: white;
+    background-color: white;
+    color: #007AFF;
     border: none;
     padding: 12px 32px;
     border-radius: 100px;
@@ -1038,27 +1169,20 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #000;
+    background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive styles for contact page */
-@media (max-width: 1024px) {
-    .contact-container {
-        flex-direction: column;
-        gap: 3rem;
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 2rem auto;
+        padding: 3rem 1.5rem;
     }
 
     .contact-content h1 {
         font-size: 36px;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-section {
-        margin: 2rem auto;
-        padding: 0 2rem;
     }
 }
 
@@ -1186,63 +1310,33 @@ body {
 
 .hero-cta {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin-top: 24px;
-    max-width: 600px;
-    width: 100%;
-}
-
-.input-wrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
-    padding: 6px;
-    max-width: 500px;
-}
-
-.email-input {
-    flex: 1;
-    padding: 16px 24px;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 16px;
-    font-family: 'Figtree', sans-serif;
-    width: 100%;
-    border-radius: 50px;
-}
-
-.email-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-family: 'Figtree', sans-serif;
-}
-
-.email-input:focus {
-    outline: none;
+    margin-top: 2rem;
 }
 
 .start-trial-btn {
-    padding: 16px 32px;
-    background: white;
-    color: #081C33;
+    background-color: white;
+    color: #0A2540;
     border: none;
-    border-radius: 50px;
+    padding: 16px 32px;
+    border-radius: 100px;
     font-size: 16px;
     font-family: 'Figtree', sans-serif;
     font-weight: 500;
     cursor: pointer;
-    transition: background 0.2s ease;
-    white-space: nowrap;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .start-trial-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove unused input wrapper styles */
+.input-wrapper {
+    display: none;
 }
 
 .cta-subtext {
@@ -1263,6 +1357,112 @@ body {
     color: white;
     margin-bottom: 1rem;
     font-weight: 600;
+}
+
+/* Add smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+    .hero + .section-wrapper {
+        margin-top: 6rem;
+    }
+    
+    .subhero {
+        margin: 8rem auto;
+    }
+    
+    .section-wrapper:has(.features) {
+        margin: 8rem 0;
+    }
+    
+    .contact-section {
+        margin: 8rem auto 6rem;
+    }
+}
+
+/* iPad Pro Specific Styles */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    /* Hero Section Adjustments */
+    .main-heading {
+        font-size: 96px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    /* Subhero Section Adjustments */
+    .subhero-content {
+        text-align: center;
+    }
+
+    .subhero-title {
+        text-align: center;
+    }
+
+    .subhero-description {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Contact Section Adjustments */
+    .contact-section {
+        border-radius: 0;
+    }
+}
+
+/* iPhone 14 Pro Max Specific Styles */
+@media (max-width: 430px) {
+    /* Reduce space between hero and first subhero */
+    .hero + .section-wrapper {
+        margin-top: 2rem;
+    }
+
+    /* Subhero adjustments */
+    .section-wrapper {
+        padding: 0;
+    }
+
+    .subhero {
+        padding: 2rem;
+        margin: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .subhero-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .subhero-title {
+        text-align: center;
+    }
+
+    .subhero-description {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Remove spacing between subheros and features */
+    .section-wrapper:has(.features) {
+        margin: 0;
+    }
+
+    /* Contact section adjustments */
+    .contact-section {
+        border-radius: 0;
+        margin: 0;
+    }
 }
 
   

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halo - eQMS Software</title>
+    <title>Cata Tools</title>
+    <link rel="icon" type="image/png" href="cata-favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,309 +12,288 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html">
-                <img src="Halo Nav Logo.png" alt="Halo Logo" />
+            <a href="/">
+                <img src="Cata-website-logo.png" alt="Cata Logo" class="logo-default">
+                <img src="Cata-website-logo-scrolled.png" alt="Cata Logo" class="logo-scrolled">
             </a>
         </div>
         
         <div class="nav-menu">
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#faqs">FAQs</a>
+                <a href="#" class="login-btn">Log In</a>
             </div>
             <div class="nav-button">
-                <a href="contact.html" class="demo-btn">Book a Demo</a>
+                <a href="#contact" class="demo-btn">Book a Demo</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <img src="halo-logo-half.png" alt="Halo Logo" class="hero-logo">
-            <p class="subtitle">#1 eQMS Software to Maintain Compliance</p>
-            <h1 class="main-heading">Streamline Your Quality Management In One Platform</h1>
+            <h1 class="main-heading">AI-powered tools for plants</h1>
+            <p class="subtitle">Catalyze GenAI adoption & impact in Process Manufacturing</p>
             <div class="hero-cta">
-                <div class="input-wrapper">
-                    <input type="email" placeholder="Enter your work email" class="email-input">
-                    <button class="start-trial-btn">Start free trial</button>
-                </div>
-                <p class="cta-subtext">Try Halo free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Sentral.</p>
+                <a href="#contact" class="start-trial-btn">Book a Demo</a>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="placeholder-image"></div>
-        </div>
     </section>
+
+    <!-- First Subhero Section -->
+    <div class="section-wrapper">
+        <section class="subhero">
+            <div class="subhero-content">
+                <h2 class="subhero-title">Instant Process Insights Through Automated Intelligence</h2>
+                <p class="subhero-description">Cata utilizes operational data from manufacturing plants and process documents (e.g. P&ID, SOP, training, etc.) to generate an automated dashboard that provides "Instant Insight" into the process. This dashboard enables more efficient plant decision-making and enhances collaboration.</p>
+            </div>
+            
+            <div class="subhero-image">
+                <img src="subhero1.jpg" alt="Process Insights Dashboard" class="subhero-img">
+            </div>
+        </section>
+    </div>
+
+    <!-- Second Subhero Section -->
+    <div class="section-wrapper">
+        <section class="subhero reverse">
+            <div class="subhero-content">
+                <h2 class="subhero-title">Empowering Engineers to Focus on What Matters</h2>
+                <p class="subhero-description">Process engineers often spend excessive time on low-value, manual activities such as monitoring and troubleshooting. This limits their ability to focus on driving optimization and innovation in the plant. With Cata, engineers can eliminate inefficient monitoring tasks and dedicate more time to high-value activities.</p>
+            </div>
+            
+            <div class="subhero-image">
+                <img src="subhero2.jpg" alt="Engineer Dashboard" class="subhero-img">
+            </div>
+        </section>
+    </div>
+
+    <!-- Third Subhero Section -->
+    <!-- <div class="section-wrapper"> -->
+        <!-- <section class="subhero reverse"> -->
+            <!-- <div class="subhero-content"> -->
+                <!-- <h2 class="subhero-title">Modern Design and Document Control</h2> -->
+                <!-- <p class="subhero-description">Use your own numbering, versioning, and change control process through a document control system that tailors to your needs.</p> -->
+                
+                <!-- <div class="feature-list"> -->
+                    <!-- <div class="feature-item"> -->
+                        <!-- <h3>AI-Powered Workflows</h3> -->
+                        <!-- <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p> -->
+                    <!-- </div> -->
+                    
+                    <!-- <div class="feature-item"> -->
+                        <!-- <h3>Smart Impact Assessments</h3> -->
+                        <!-- <p>New release of an external standard? Leverage AI-powered impact assessments to streamline your QMS updates.</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            
+            <!-- <div class="subhero-image"> -->
+                <!-- <div class="placeholder-card"></div> -->
+            <!-- </div> -->
+        <!-- </section> -->
+    <!-- </div>  -->
 
     <!-- Features Section -->
     <div class="section-wrapper">
         <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="customize.png" alt="Customization Icon" class="feature-img">
-                </div>
-                <h2>Customized Just For You</h2>
-                <p>We know that all companies have different systems in place. Our platform is fully customizable for your QMS needs.</p>
+            <div class="features-header">
+                <h2 class="features-title">How Cata Works</h2>
+                <p class="features-subtitle">Use GenAI to eliminate inefficient process performance monitoring, utilize process documents and operational data to gain "Instant Insight"</p>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="data.png" alt="Data Import Icon" class="feature-img">
+            <div class="feature-cards-container">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="upload-data.png" alt="Customization Icon" class="feature-img">
+                    </div>
+                    <h2>Upload Your Data</h2>
+                    <p>Connect operational data and upload relevant process document and diagrams to the platform.</p>
                 </div>
-                <h2>Easy and Secure Data Import</h2>
-                <p>Already have a QMS? We've created an automated system to migrate your documentation to have your QMS platform set up in an instant.</p>
-            </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="ai.png" alt="AI Icon" class="feature-img">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="create-dashboard.png" alt="Data Import Icon" class="feature-img">
+                    </div>
+                    <h2>Generate Your Dashboard</h2>
+                    <p>Utilize GenAI to generate a custom and automated dashboard to gain "Instant Insight". Equipped with AI assistant to gain further insights about the process.</p>
                 </div>
-                <h2>AI Capabilities</h2>
-                <p>We don't rely on AI, we use it as a tool to empower engineers to make quality-focused decisions and reduce redundant documentation.</p>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="team.png" alt="AI Icon" class="feature-img">
+                    </div>
+                    <h2>Share With Your Team</h2>
+                    <p>Share a customized dashboard with the team to leverage tools to drive plant decisions and enhance collaboration.</p>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- Subhero Section -->
-    <div class="section-wrapper">
-        <section class="subhero reverse">
-            <div class="subhero-content">
-                <h2 class="subhero-title">Modern Design and Document Control</h2>
-                <p class="subhero-description">Use your own numbering, versioning, and change control process through a document control system that tailors to your needs.</p>
-                
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <h3>AI-Powered Workflows</h3>
-                        <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <h3>Smart Impact Assessments</h3>
-                        <p>New release of an external standard? Leverage AI-powered impact assessments to streamline your QMS updates.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="subhero-image">
-                <div class="placeholder-card"></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- After the first subhero section, add: -->
-    <div class="section-wrapper">
-        <section class="subhero">
-            <div class="subhero-content">
-                <h2 class="subhero-title">Intuitive Risk Mitigation</h2>
-                <p class="subhero-description">We've captured the simplicity of documents and spreadsheets into a platform that provided valuable insights to risk mitigations and post-market tracking.</p>
-                
-                <div class="demo-link">
-                    <a href="contact.html" class="book-demo">Book a Demo <span class="arrow">→</span></a>
-                </div>
-            </div>
-            
-            <div class="subhero-image">
-                <div class="placeholder-card"></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- After the second subhero section, add: -->
-    <div class="section-wrapper">
-        <section class="subhero reverse">
-            <div class="subhero-content">
-                <h2 class="subhero-title">Modern Design and Document Control</h2>
-                <p class="subhero-description">Use your own numbering, versioning, and change control process through a document control system that tailors to your needs.</p>
-                
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <h3>AI-Powered Workflows</h3>
-                        <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <h3>Smart Impact Assessments</h3>
-                        <p>New release of an external standard? Leverage AI-powered impact assessments to streamline your QMS updates.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="subhero-image">
-                <div class="placeholder-card"></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- After the last subhero section, add: -->
-    <div class="section-wrapper">
-        <section class="bento-grid">
-            <div class="bento-container">
-                <div class="bento-left">
+    <!-- Bento Grid Features -->
+    <!-- <div class="section-wrapper"> -->
+        <!-- <section class="bento-grid"> -->
+            <!-- <div class="bento-container"> -->
+                <!-- <div class="bento-left"> -->
                     <!-- First Card -->
-                    <div class="bento-card">
-                        <div class="card-content">
-                            <h3>This is a feature</h3>
-                            <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="contact.html" class="book-demo">Book a Demo <span class="arrow">→</span></a>
-                            <div class="card-image">
-                                <div class="placeholder-card small"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- <div class="bento-card"> -->
+                        <!-- <div class="card-content"> -->
+                            <!-- <h3>This is a feature</h3> -->
+                            <!-- <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p> -->
+                        <!-- </div> -->
+                        <!-- <div class="card-footer"> -->
+                            <!-- <a href="contact.html" class="book-demo">Book a Demo <span class="arrow">→</span></a> -->
+                            <!-- <div class="card-image"> -->
+                                <!-- <div class="placeholder-card small"></div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
 
                     <!-- Second Card -->
-                    <div class="bento-card">
-                        <div class="card-content">
-                            <h3>This is a feature</h3>
-                            <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="contact.html" class="book-demo">Book a Demo <span class="arrow">→</span></a>
-                            <div class="card-image">
-                                <div class="placeholder-card small"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <!-- <div class="bento-card"> -->
+                        <!-- <div class="card-content"> -->
+                            <!-- <h3>This is a feature</h3> -->
+                            <!-- <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p> -->
+                        <!-- </div> -->
+                        <!-- <div class="card-footer"> -->
+                            <!-- <a href="contact.html" class="book-demo">Book a Demo <span class="arrow">→</span></a> -->
+                            <!-- <div class="card-image"> -->
+                                <!-- <div class="placeholder-card small"></div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
 
                 <!-- Large Right Card -->
-                <div class="bento-right">
-                    <div class="bento-card large">
-                        <div class="card-content">
-                            <h3>This is a feature</h3>
-                            <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p>
-                            <a href="contact.html" class="book-demo">Book a Demo <span class="arrow">→</span></a>
-                        </div>
-                        <div class="card-image large-image">
-                            <div class="placeholder-card large"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+                <!-- <div class="bento-right"> -->
+                    <!-- <div class="bento-card large"> -->
+                        <!-- <div class="card-content"> -->
+                            <!-- <h3>This is a feature</h3> -->
+                            <!-- <p>Leverage AI as your copilot ensure your documents conform correctly to your processes before they are released.</p> -->
+                            <!-- <a href="contact.html" class="book-demo">Book a Demo <span class="arrow">→</span></a> -->
+                        <!-- </div> -->
+                        <!-- <div class="card-image large-image"> -->
+                            <!-- <div class="placeholder-card large"></div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </section> -->
+    <!-- </div> -->
 
-    <!-- After the bento grid section, add: -->
-    <div class="section-wrapper">
-        <section class="feature-highlight">
-            <div class="highlight-container">
-                <div class="highlight-content">
-                    <h2>A secure, AI-powered copilot built just for you</h2>
-                    <p>Gather information instantly across your documentation through small language learning models built securely based on your company's internal data.</p>
-                    <a href="#" class="highlight-btn">See How It Works</a>
-                </div>
-                <div class="highlight-image">
-                    <div class="placeholder-card"></div>
-                </div>
-            </div>
-        </section>
-    </div>
+    <!-- Feature Highlight -->
+    <!-- <div class="section-wrapper"> -->
+        <!-- <section class="feature-highlight"> -->
+            <!-- <div class="highlight-container"> -->
+                <!-- <div class="highlight-content"> -->
+                    <!-- <h2>A secure, AI-powered copilot built just for you</h2> -->
+                    <!-- <p>Gather information instantly across your documentation through small language learning models built securely based on your company's internal data.</p> -->
+                    <!-- <a href="#" class="highlight-btn">See How It Works</a> -->
+                <!-- </div> -->
+                <!-- <div class="highlight-image"> -->
+                    <!-- <div class="placeholder-card"></div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </section> -->
+    <!-- </div> -->
 
-    <!-- After the feature highlight section, add: -->
-    <div class="section-wrapper">
-        <section class="faq-section">
-            <h2>FAQs</h2>
+    <!-- FAQs -->
+    <!-- <div class="section-wrapper"> -->
+        <!-- <section class="faq-section"> -->
+            <!-- <h2>FAQs</h2> -->
             
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>I don't need all of the functionality that Sentral Compliance provides. Can I just use a few features?</span>
-                        <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Answer text goes here...</p>
-                    </div>
-                </div>
+            <!-- <div class="faq-container"> -->
+                <!-- <div class="faq-item"> -->
+                    <!-- <button class="faq-question"> -->
+                        <!-- <span>I don't need all of the functionality that Sentral Compliance provides. Can I just use a few features?</span> -->
+                        <!-- <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"> -->
+                            <!-- <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> -->
+                        <!-- </svg> -->
+                    <!-- </button> -->
+                    <!-- <div class="faq-answer"> -->
+                        <!-- <p>Answer text goes here...</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How long does onboarding take?</span>
-                        <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Answer text goes here...</p>
-                    </div>
-                </div>
+                <!-- <div class="faq-item"> -->
+                    <!-- <button class="faq-question"> -->
+                        <!-- <span>How long does onboarding take?</span> -->
+                        <!-- <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"> -->
+                            <!-- <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> -->
+                        <!-- </svg> -->
+                    <!-- </button> -->
+                    <!-- <div class="faq-answer"> -->
+                        <!-- <p>Answer text goes here...</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Does Sentral provide validation documentation?</span>
-                        <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Answer text goes here...</p>
-                    </div>
-                </div>
+                <!-- <div class="faq-item"> -->
+                    <!-- <button class="faq-question"> -->
+                        <!-- <span>Does Sentral provide validation documentation?</span> -->
+                        <!-- <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"> -->
+                            <!-- <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> -->
+                        <!-- </svg> -->
+                    <!-- </button> -->
+                    <!-- <div class="faq-answer"> -->
+                        <!-- <p>Answer text goes here...</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>I like the way I work right now. Can I customize Halo to my needs?</span>
-                        <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Answer text goes here...</p>
-                    </div>
-                </div>
+                <!-- <div class="faq-item"> -->
+                    <!-- <button class="faq-question"> -->
+                        <!-- <span>I like the way I work right now. Can I customize Halo to my needs?</span> -->
+                        <!-- <svg class="plus-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"> -->
+                            <!-- <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> -->
+                        <!-- </svg> -->
+                    <!-- </button> -->
+                    <!-- <div class="faq-answer"> -->
+                        <!-- <p>Answer text goes here...</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </section> -->
+    <!-- </div> -->
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h1>Book Your Free Demo Today</h1>
             </div>
-        </section>
-    </div>
 
-    <!-- Add this after the FAQ section, before closing body tag -->
-    <div class="section-wrapper">
-        <section class="cta-section">
-            <div class="cta-container">
-                <h2>Let's innovate together!</h2>
-                <a href="contact.html" class="cta-button">Book a Demo</a>
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" name="jobTitle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell us about your process monitoring needs (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="What challenges are you trying to solve?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <script>
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // If the clicked item wasn't active, open it
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html> 
