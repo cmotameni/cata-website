@@ -15,15 +15,16 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Create FormData object
             const formData = new FormData(this);
-            
-            // Add recipient email
-            formData.append('to_email', 'luis@cata.tools');
 
             console.log('Submitting form to Web3Forms...');
             
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
             });
 
             const data = await response.json();
@@ -49,16 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
             toast.textContent = 'Sorry, there was an error. Please try again.';
             toast.style.backgroundColor = '#dc3545';
             toast.classList.add('show');
+        } finally {
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                const toast = document.getElementById('toast');
+                if (toast.classList.contains('show')) {
+                    toast.classList.remove('show');
+                }
+            }, 3000);
+
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         }
-
-        // Hide toast after 3 seconds
-        setTimeout(() => {
-            const toast = document.getElementById('toast');
-            toast.classList.remove('show');
-        }, 3000);
-
-        // Reset button state
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
     });
 }); 
