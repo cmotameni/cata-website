@@ -46,6 +46,11 @@
                     <input type="hidden" name="access_key" value="f415f4b0-4f3e-4c55-9ef0-17700e5ec330">
                     <input type="hidden" name="subject" value="New Demo Request from Website">
                     <input type="hidden" name="from_name" value="Cata Website Contact Form">
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <!-- Add redirect URL -->
+                    <input type="hidden" name="redirect" value="false">
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -58,7 +63,7 @@
 
                     <div class="form-group">
                         <label for="jobTitle">Job Title</label>
-                        <input type="text" id="jobTitle" name="jobTitle" required>
+                        <input type="text" id="jobTitle" name="job_title" required>
                     </div>
 
                     <div class="form-group">

@@ -257,11 +257,23 @@
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-content">
-                <h1>Book Your Free Demo Today</h1>
+                <h1>Learn how Cata can transform your process monitoring</h1>
+                <p class="contact-description">
+                    <span class="highlight">Cata is an AI-powered platform</span> designed for process manufacturing. <span class="highlight">We simplify</span> the complex and time-consuming aspects of process monitoring and optimization, from <span class="highlight">data analysis</span> to <span class="highlight">performance tracking</span> to all of your <span class="highlight">collaboration</span> needs.
+                </p>
             </div>
 
             <div class="contact-form-container">
-                <form class="contact-form" id="demoForm">
+                <h2>Book your free custom demo today</h2>
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="f415f4b0-4f3e-4c55-9ef0-17700e5ec330">
+                    <input type="hidden" name="subject" value="New Demo Request from Website">
+                    <input type="hidden" name="from_name" value="Cata Website Contact Form">
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <!-- Add redirect URL -->
+                    <input type="hidden" name="redirect" value="false">
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -273,8 +285,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="jobTitle">Job Title (Optional)</label>
-                        <input type="text" id="jobTitle" name="jobTitle">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" name="job_title" required>
                     </div>
 
                     <div class="form-group">
@@ -294,7 +306,7 @@
     </section>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toast">Thanks for your interest! We'll be in touch soon.</div>
+    <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
     <script src="navbar.js"></script>

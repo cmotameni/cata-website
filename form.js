@@ -1,52 +1,64 @@
 // Form submission handling
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    // Show loading state
-    const submitBtn = this.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
 
-    try {
-        const formData = new FormData(this);
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        });
+        // Show loading state
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
 
-        const data = await response.json();
-
-        if (data.success) {
-            // Show success message
-            const toast = document.getElementById('toast');
-            toast.textContent = 'Thanks for your interest! We\'ll be in touch soon.';
-            toast.style.backgroundColor = '#4CAF50';
-            toast.classList.add('show');
+        try {
+            // Create FormData object
+            const formData = new FormData(this);
             
-            // Reset form
-            this.reset();
-        } else {
-            throw new Error('Form submission failed');
+            // Add recipient email
+            formData.append('to_email', 'luis@cata.tools');
+
+            console.log('Submitting form to Web3Forms...');
+            
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+            console.log('Response from Web3Forms:', data);
+
+            if (data.success) {
+                // Show success message
+                const toast = document.getElementById('toast');
+                toast.textContent = 'Thanks for your interest! We\'ll be in touch soon.';
+                toast.style.backgroundColor = '#4CAF50';
+                toast.classList.add('show');
+                
+                // Reset form
+                this.reset();
+            } else {
+                throw new Error(data.message || 'Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            
+            // Show error message
+            const toast = document.getElementById('toast');
+            toast.textContent = 'Sorry, there was an error. Please try again.';
+            toast.style.backgroundColor = '#dc3545';
+            toast.classList.add('show');
         }
-    } catch (error) {
-        // Show error message
-        const toast = document.getElementById('toast');
-        toast.textContent = 'Sorry, there was an error. Please try again.';
-        toast.style.backgroundColor = '#dc3545';
-        toast.classList.add('show');
-        
-        console.error('Form submission failed:', error);
-    }
 
-    // Hide toast after 3 seconds
-    setTimeout(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.remove('show');
-    }, 3000);
+        // Hide toast after 3 seconds
+        setTimeout(() => {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('show');
+        }, 3000);
 
-    // Reset button state
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
+        // Reset button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 }); 
