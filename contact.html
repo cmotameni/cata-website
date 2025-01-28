@@ -42,7 +42,10 @@
 
             <div class="contact-form-container">
                 <h2>Book your free custom demo today</h2>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="f415f4b0-4f3e-4c55-9ef0-17700e5ec330">
+                    <input type="hidden" name="subject" value="New Demo Request from Website">
+                    <input type="hidden" name="from_name" value="Cata Website Contact Form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -73,5 +76,10 @@
             </div>
         </div>
     </section>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="form.js"></script>
 </body>
 </html> 

@@ -1,44 +1,52 @@
 // Form submission handling
-document.getElementById('demoForm').addEventListener('submit', async function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    // Collect form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        jobTitle: document.getElementById('jobTitle').value,
-        company: document.getElementById('company').value,
-        message: document.getElementById('message').value
-    };
+    // Show loading state
+    const submitBtn = this.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
     try {
-        // Send email using Email.js service
-        await emailjs.send(
-            'YOUR_SERVICE_ID', // Replace with your Email.js service ID
-            'YOUR_TEMPLATE_ID', // Replace with your Email.js template ID
-            formData,
-            'YOUR_PUBLIC_KEY' // Replace with your Email.js public key
-        );
+        const formData = new FormData(this);
+        
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
 
-        // Clear the form
-        this.reset();
-        
-        // Show success toast
-        toast.show();
+        const data = await response.json();
 
-    } catch (error) {
-        console.error('Error sending email:', error);
-        
-        // Show error toast with specific message
-        let errorMessage = 'There was an error submitting the form. Please try again.';
-        
-        // Customize error message based on error type
-        if (error.message.includes('Network')) {
-            errorMessage = 'Network error. Please check your internet connection.';
-        } else if (error.message.includes('Invalid template')) {
-            errorMessage = 'Service temporarily unavailable. Please try again later.';
+        if (data.success) {
+            // Show success message
+            const toast = document.getElementById('toast');
+            toast.textContent = 'Thanks for your interest! We\'ll be in touch soon.';
+            toast.style.backgroundColor = '#4CAF50';
+            toast.classList.add('show');
+            
+            // Reset form
+            this.reset();
+        } else {
+            throw new Error('Form submission failed');
         }
+    } catch (error) {
+        // Show error message
+        const toast = document.getElementById('toast');
+        toast.textContent = 'Sorry, there was an error. Please try again.';
+        toast.style.backgroundColor = '#dc3545';
+        toast.classList.add('show');
         
-        toast.show(errorMessage, true);
+        console.error('Form submission failed:', error);
     }
+
+    // Hide toast after 3 seconds
+    setTimeout(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.remove('show');
+    }, 3000);
+
+    // Reset button state
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
 }); 
