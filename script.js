@@ -41,13 +41,32 @@ const initMobileMenu = () => {
     }
 };
 
+// Free Trial button functionality
+const initFreeTrialButton = () => {
+    const freeTrialBtn = document.getElementById('free-trial-btn');
+    const comingSoonBadge = document.getElementById('coming-soon');
+    
+    if (freeTrialBtn && comingSoonBadge) {
+        freeTrialBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            comingSoonBadge.style.display = 'block';
+            
+            // Hide the badge after 3 seconds
+            setTimeout(() => {
+                comingSoonBadge.style.display = 'none';
+            }, 3000);
+        });
+    }
+};
+
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
+    initFreeTrialButton();
 });
 
 // Form submission handling
-document.getElementById('demoForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Here you would typically send the form data to your server
@@ -64,4 +83,4 @@ document.getElementById('demoForm').addEventListener('submit', function(e) {
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
-}); 
+});

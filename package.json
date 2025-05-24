@@ -1,0 +1,21 @@
+{
+  "name": "cata-website",
+  "version": "1.0.0",
+  "main": "form.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/todoluisto/cata-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/todoluisto/cata-website/issues"
+  },
+  "homepage": "https://github.com/todoluisto/cata-website#readme",
+  "description": ""
+}
