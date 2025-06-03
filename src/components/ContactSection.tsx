@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PrimaryButton } from './Button';
 import contactIcon1 from '../../assets/contact-icon-1.png';
 import contactIcon2 from '../../assets/contact-icon-2.png';
