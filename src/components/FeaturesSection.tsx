@@ -6,17 +6,17 @@ import { motion } from 'framer-motion';
 
 const features = [
   {
-    title: 'Knowledge at your fingertips',
-    text: 'Centralize your documentation, data, and even tribal knowledge. Enable easy access and unlock a tailored AI Assistant to provide technical answers',
+    title: 'Knowledge at Your Fingertips',
+    text: 'Centralize your documentation, data, and even tribal knowledge. Enable easy access and unlock a tailored AI Assistant to provide technical answers.',
     image: feature1,
   },
   {
-    title: 'Simplified daily operations',
+    title: 'Simplified Daily Operations',
     text: 'Follow step-by-step procedures, adopt new workflows, or capture critical data - all through an intuitive interface designed around your needs.',
     image: feature2,
   },
   {
-    title: 'Right Where you need it most',
+    title: 'Right Where You Need it Most',
     text: 'Access via web browser provides flexibility to work on the go. For on-site field applications, we also support with deployment of industrial-grade tablets.',
     image: feature3,
   },
@@ -44,7 +44,7 @@ const FeaturesSection = () => {
           viewport={{ once: true, margin: "200px" }}
           variants={itemVariants}
         >
-          <SectionHeader pillText="FEATURES" title="Accelerate Your Revenue Through AI-Derived Cost-Savings" />
+          <SectionHeader pillText="FEATURES" title="Key Capabilities That Drive Performance" />
         </motion.div>
         <div className="flex flex-col gap-12 mt-20">
           {features.map((feature, idx) => (

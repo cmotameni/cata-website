@@ -6,7 +6,7 @@ const TrustedBySection = () => {
     <section className="bg-white py-12">
       <div className="container mx-auto px-6">
         <h2 className="text-center text-sm font-semibold text-gray-500 mb-8">
-          High Performing Teams at Manufacturing companies Use Cata
+          High Performing Manufacturing Teams Use our Tools
         </h2>
         <div className="flex justify-center gap-8">
           <img src={company1} alt="Company 1" className="w-48 h-16 object-contain rounded" />

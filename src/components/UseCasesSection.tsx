@@ -55,7 +55,7 @@ const BenefitsSection = () => {
           viewport={{ once: true, margin: "100px" }}
           variants={containerVariants}
         >
-          <SectionHeader pillText="BENEFITS" title="How Manufacturers Benefit from Cata" />
+          <SectionHeader pillText="BENEFITS" title="Tailored For Every Team Member" />
           <div className="flex flex-col md:flex-row justify-center gap-12">
             {benefits.map((benefit, idx) => (
               <motion.div 

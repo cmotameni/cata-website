@@ -6,21 +6,6 @@ import contactIcon3 from '../../assets/contact-icon-3.png';
 
 const iconClasses = 'w-6 h-6 flex-shrink-0 mr-4';
 
-const contactItems = [
-  {
-    icon: <img src={contactIcon1} alt="Contact Icon 1" className={iconClasses} />,
-    text: 'Discuss the challenges you are looking to solve with Cata',
-  },
-  {
-    icon: <img src={contactIcon2} alt="Contact Icon 2" className={iconClasses} />,
-    text: 'Tailor a product demo specific to your goals',
-  },
-  {
-    icon: <img src={contactIcon3} alt="Contact Icon 3" className={iconClasses} />,
-    text: 'Plan next steps such as feature updates or POC with your team',
-  },
-];
-
 const ContactSection = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -64,12 +49,25 @@ const ContactSection = () => {
         <div className="flex-1 text-white max-w-xl w-full text-center md:text-left">
           <span className="inline-block text-white text-[16px] font-regular uppercase px-5 py-2 rounded-[8px] border border-white/10 mb-8 tracking-wider mx-auto md:mx-0" style={{ letterSpacing: 1 }}>CONTACT</span>
           <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-            Learn How Cata Can<br /><span className="text-[#DBEAFE]">Transform Your Process Monitoring</span>
+            Learn How Cata Tools Can Make Your Process Monitoring 10x Faster
           </h2>
           <hr className="border-white/30 mb-6" />
-          <div className="mb-6 font-semibold">Together We'll:</div>
+          <div className="mb-6 font-semibold">Together we'll:</div>
           <ul className="space-y-6">
-            {contactItems.map((item, idx) => (
+            {[
+              {
+                icon: <img src={contactIcon1} alt="Contact Icon 1" className={iconClasses} />,
+                text: 'Discuss the challenges you are looking to solve',
+              },
+              {
+                icon: <img src={contactIcon2} alt="Contact Icon 2" className={iconClasses} />,
+                text: 'Tailor the product design specific to your goals',
+              },
+              {
+                icon: <img src={contactIcon3} alt="Contact Icon 3" className={iconClasses} />,
+                text: 'Plan next steps to deploy Cata Tools for your team',
+              },
+            ].map((item, idx) => (
               <li key={idx} className="flex items-start md:items-start justify-center md:justify-start">
                 {item.icon}
                 <span className="text-base md:text-lg text-white/90">{item.text}</span>

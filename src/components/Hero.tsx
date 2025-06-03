@@ -71,10 +71,10 @@ const Hero = () => {
             >
               10× Faster Insights
             </span>
-            {' '}for Manufacturing Engineers
+            {' '}for Manufacturers
           </motion.h1>
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-600 mb-8">
-            For engineers drowning in spreadsheets, Cata Tools is a secure, web-based platform that delivers actionable insights 10× faster by combining your plant's data, know-how and workflows into scalable, turnkey AI-powered tools—unlike generic BI or AI solutions.
+            We offer a secure, web-based platform that delivers fast actionable insights by combining plant data, process know-how and workflows into turnkey AI-powered tools
           </motion.p>
           {/* Button Row */}
           <motion.div variants={itemVariants} className="flex justify-center gap-4">
