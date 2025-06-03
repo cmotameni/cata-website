@@ -61,8 +61,8 @@ const ContactSection = () => {
     <section id="contact" className="bg-[#0A2A5C] py-20">
       <div className="container mx-auto px-6 flex flex-col md:flex-row gap-12 md:gap-16 items-center justify-between">
         {/* Left Info */}
-        <div className="flex-1 text-white max-w-xl w-full">
-          <span className="inline-block text-white text-[16px] font-regular uppercase px-5 py-2 rounded-[8px] border border-white/10 mb-8 tracking-wider" style={{ letterSpacing: 1 }}>CONTACT</span>
+        <div className="flex-1 text-white max-w-xl w-full text-center md:text-left">
+          <span className="inline-block text-white text-[16px] font-regular uppercase px-5 py-2 rounded-[8px] border border-white/10 mb-8 tracking-wider mx-auto md:mx-0" style={{ letterSpacing: 1 }}>CONTACT</span>
           <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
             Learn How Cata Can<br /><span className="text-[#DBEAFE]">Transform Your Process Monitoring</span>
           </h2>
@@ -70,7 +70,7 @@ const ContactSection = () => {
           <div className="mb-6 font-semibold">Together We'll:</div>
           <ul className="space-y-6">
             {contactItems.map((item, idx) => (
-              <li key={idx} className="flex items-start">
+              <li key={idx} className="flex items-start md:items-start justify-center md:justify-start">
                 {item.icon}
                 <span className="text-base md:text-lg text-white/90">{item.text}</span>
               </li>

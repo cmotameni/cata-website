@@ -91,7 +91,11 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <img src={heroImage} alt="Hero" className="w-full h-[800px] rounded-lg object-contain aspect-[16/5]" />
+          <img 
+            src={heroImage} 
+            alt="Hero" 
+            className="w-full h-auto max-h-[600px] md:max-h-[800px] rounded-lg object-contain" 
+          />
         </motion.div>
       </div>
 

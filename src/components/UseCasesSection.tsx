@@ -7,18 +7,18 @@ import { motion } from 'framer-motion';
 
 const benefits = [
   {
-    title: 'Informed Plant Management',
-    text: 'Have your knowledge available in one place by uploading operational data and relevant process documents.',
+    title: 'Achieve Alignment With Ease',
+    text: 'Faster decision-making, from leadership to operations, with centralized performance metrics and dashboards',
     image: useData,
   },
   {
-    title: 'Fast Insights For Engineers',
-    text: 'Generate dashboard that is equipped with an AI Assistant and accelerate production of actionable insights.',
+    title: 'Transform Data into Results',
+    text: 'Accelerate analysis for engineers by turning complex operational data into purpose-driven information instantly',
     image: useInsight,
   },
   {
-    title: 'Share With Your Team',
-    text: 'Give the tools to the team to help them drive plant decisions and increase operational efficiency.',
+    title: 'Empower Operations To Thrive',
+    text: 'Equip the team with tools that simplify their tasks, increase their productivity and boost efficiency in your plant',
     image: useTeam,
   },
 ];
@@ -61,12 +61,12 @@ const BenefitsSection = () => {
             {benefits.map((benefit, idx) => (
               <motion.div 
                 key={idx} 
-                className="flex flex-col items-start w-full md:flex-1"
+                className="flex flex-col items-center md:items-start w-full md:flex-1"
                 variants={itemVariants}
               >
                 <img src={benefit.image} alt={benefit.title} className="w-full min-h-[300px] rounded-lg object-cover object-center" />
-                <h3 className="text-[24px] font-semibold text-gray-900 mt-6 mb-3 text-left">{benefit.title}</h3>
-                <p className="text-[18px] text-gray-600 text-left pb-6">{benefit.text}</p>
+                <h3 className="text-[24px] font-semibold text-gray-900 mt-6 mb-3 text-center md:text-left">{benefit.title}</h3>
+                <p className="text-[18px] text-gray-600 text-center md:text-left pb-6">{benefit.text}</p>
               </motion.div>
             ))}
           </div>

@@ -7,18 +7,18 @@ import { motion } from 'framer-motion';
 
 const features = [
   {
-    title: 'All your knowledge at your fingertips',
-    text: 'Centralize documentation, data, and even tribal knowledge about your processes. Then ask questions to your own personal AI Assistant.',
+    title: 'Knowledge at your fingertips',
+    text: 'Centralize your documentation, data, and even tribal knowledge. Enable easy access and unlock a tailored AI Assistant to provide technical answers',
     image: feature1,
   },
   {
     title: 'Simplified daily operations',
-    text: 'Follow step-by-step procedures, learn a new workflow, collect critical data. Whatever your challenge is, dive into it with confidence using our easy to use interface, built to fit your needs.',
+    text: 'Follow step-by-step procedures, adopt new workflows, or capture critical data - all through an intuitive interface designed around your needs.',
     image: feature2,
   },
   {
-    title: 'Take it where you need it most',
-    text: 'Our solutions are secure and accessible via web browser, offering flexibility to take it on the go. We also offer deployment of industrial tablets with our software.',
+    title: 'Right Where you need it most',
+    text: 'Access via web browser provides flexibility to work on the go. For on-site field applications, we also support with deployment of industrial-grade tablets.',
     image: feature3,
   },
 ];
@@ -57,14 +57,14 @@ const FeaturesSection = () => {
               viewport={{ once: true, margin: "200px" }}
               variants={itemVariants}
             >
-              {/* Text on the left */}
-              <div className="flex-1 text-center md:text-left">
+              {/* Image - First on mobile, right on desktop */}
+              <div className="flex-1 flex justify-center md:justify-end order-1 md:order-2">
+                <img src={feature.image} alt={feature.title} className="w-full md:min-w-[500px] min-h-[300px] md:min-h-[400px] rounded-lg object-cover object-center" />
+              </div>
+              {/* Text - Second on mobile, left on desktop */}
+              <div className="flex-1 text-center md:text-left order-2 md:order-1">
                 <h3 className="text-[36px] font-semibold text-gray-900 mb-4">{feature.title}</h3>
                 <p className="text-[20px] text-gray-600 font-normal">{feature.text}</p>
-              </div>
-              {/* Image on the right */}
-              <div className="flex-1 flex justify-center md:justify-end">
-                <img src={feature.image} alt={feature.title} className="min-w-[500px] min-h-[400px] rounded-lg object-cover object-center" />
               </div>
             </motion.div>
           ))}
