@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { PrimaryButton } from './Button';
 import logoColor from '../../assets/logo-color.jpg';
 

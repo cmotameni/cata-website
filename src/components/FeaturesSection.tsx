@@ -1,4 +1,3 @@
-import React from 'react';
 import SectionHeader from './SectionHeader';
 import feature1 from '../../assets/feature-1.jpg';
 import feature2 from '../../assets/feature-2.jpg';

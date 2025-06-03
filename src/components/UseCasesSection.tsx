@@ -1,4 +1,3 @@
-import React from 'react';
 import SectionHeader from './SectionHeader';
 import useData from '../../assets/use-data.jpg';
 import useInsight from '../../assets/use-insight.jpg';

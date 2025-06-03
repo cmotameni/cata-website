@@ -1,4 +1,3 @@
-import React from 'react';
 import { PrimaryButton, SecondaryButton } from './Button';
 import heroImage from '../../assets/hero-image.png';
 import { motion } from 'framer-motion';
