@@ -46,8 +46,9 @@ const ContactSection = () => {
         {/* Left Info */}
         <div className="flex-1 text-white max-w-xl w-full text-center md:text-left">
           <span className="inline-block text-white text-[16px] font-regular uppercase px-5 py-2 rounded-[8px] border border-white/10 mb-8 tracking-wider mx-auto md:mx-0" style={{ letterSpacing: 1 }}>CONTACT</span>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-            Learn How Cata Tools Can Make Your Process Monitoring 10x Faster
+          <h2 className="text-4xl md:text-5xl mb-6 leading-tight">
+            <span className="font-semibold">Learn How Cata Tools Can Make Your</span>{' '}
+            <span className="font-black text-[#DBEAFE]">Process Monitoring 10x Faster</span>
           </h2>
           <hr className="border-white/30 mb-6" />
           <div className="mb-6 font-semibold">Together we'll:</div>
