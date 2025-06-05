@@ -23,9 +23,7 @@ const ContactSection = () => {
         method: 'POST',
         body: formData,
         headers: {
-          'Accept': 'application/json',
-          'Subject': 'New Demo Request from Cata Website',
-          'Reply-To': formData.get('email') as string
+          'Accept': 'application/json'
         }
       });
 
