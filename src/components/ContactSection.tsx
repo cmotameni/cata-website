@@ -4,7 +4,7 @@ import contactIcon1 from '../../assets/contact-icon-1.png';
 import contactIcon2 from '../../assets/contact-icon-2.png';
 import contactIcon3 from '../../assets/contact-icon-3.png';
 
-const iconClasses = 'w-6 h-6 flex-shrink-0 mr-4';
+const iconClasses = 'w-6 h-6 flex-shrink-0 mr-4 object-contain';
 
 const ContactSection = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');

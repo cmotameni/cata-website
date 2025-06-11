@@ -61,7 +61,10 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <motion.h1 
+            variants={itemVariants} 
+            className="hero-heading text-3xl min-[430px]:text-4xl min-[587px]:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+          >
             <span
               className="inline-block bg-gradient-to-r from-[#007AFF] to-[#D305C2] bg-clip-text text-transparent"
               style={{

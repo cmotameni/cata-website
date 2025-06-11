@@ -43,8 +43,5 @@ body {
   /* Remove display: flex and place-items: center */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+/* Removing global h1 style to prevent conflicts with Tailwind */
 

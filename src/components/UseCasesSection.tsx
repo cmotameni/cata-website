@@ -63,7 +63,7 @@ const BenefitsSection = () => {
                 className="flex flex-col items-center md:items-start w-full md:flex-1"
                 variants={itemVariants}
               >
-                <img src={benefit.image} alt={benefit.title} className="w-full min-h-[300px] rounded-lg object-cover object-center" />
+                <img src={benefit.image} alt={benefit.title} className="w-full min-h-[300px] rounded-lg object-contain md:object-cover object-center" />
                 <h3 className="text-[24px] font-semibold text-gray-900 mt-6 mb-3 text-center md:text-left">{benefit.title}</h3>
                 <p className="text-[18px] text-gray-600 text-center md:text-left pb-6">{benefit.text}</p>
               </motion.div>

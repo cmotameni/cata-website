@@ -58,7 +58,7 @@ const FeaturesSection = () => {
             >
               {/* Image - First on mobile, right on desktop */}
               <div className="flex-1 flex justify-center md:justify-end order-1 md:order-2">
-                <img src={feature.image} alt={feature.title} className="w-full md:min-w-[500px] min-h-[300px] md:min-h-[400px] rounded-lg object-cover object-center" />
+                <img src={feature.image} alt={feature.title} className="w-full md:min-w-[500px] min-h-[300px] md:min-h-[400px] rounded-lg object-contain md:object-cover object-center" />
               </div>
               {/* Text - Second on mobile, left on desktop */}
               <div className="flex-1 text-center md:text-left order-2 md:order-1">
